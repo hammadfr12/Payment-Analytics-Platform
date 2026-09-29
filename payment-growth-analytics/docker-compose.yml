@@ -1,0 +1,31 @@
+# docker-compose.yml — reference only.
+# This project runs fully locally (DuckDB embedded + Python venv). No Docker is
+# required. This file is provided for teams who want to containerize the API
+# and Streamlit app later. Not used by the Makefile.
+
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: pga-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PGA_DUCKDB_PATH=/data/processed/payment_growth.duckdb
+    volumes:
+      - ./data:/data
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+
+  app:
+    build: .
+    container_name: pga-streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      - PGA_DUCKDB_PATH=/data/processed/payment_growth.duckdb
+    volumes:
+      - ./data:/data
+    command: streamlit run app/streamlit/app.py --server.port 8501 --server.address 0.0.0.0
+    depends_on:
+      - api

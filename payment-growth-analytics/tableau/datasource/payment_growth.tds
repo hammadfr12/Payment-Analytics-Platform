@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<datasource caption="Payment Growth Extract" version="18.1">
+  <connection class="federated">
+    <relation name="Extract" type="extract" connection="payment_growth.hyper" />
+  </connection>
+  <tables>
+    <table name="merchant_performance" />
+    <table name="industry_benchmark" />
+    <table name="rca" />
+    <table name="opportunities" />
+    <table name="checkout_conversion" />
+    <table name="payment_method_metrics" />
+    <table name="merchants" />
+  </tables>
+</datasource>

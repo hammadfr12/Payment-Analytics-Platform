@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+.tox/
+
+# Data artifacts (generated, not committed)
+data/raw/*
+data/processed/*
+data/generated/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/generated/.gitkeep
+
+# DuckDB
+*.duckdb
+*.duckdb.wal
+
+# Tableau extracts (generated binaries — keep workbooks, ignore extracts)
+tableau/extracts/*.hyper
+tableau/extracts/*.tde
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+pipeline_run_summary.json
+
+# Machine-specific
+.claude/launch.json
