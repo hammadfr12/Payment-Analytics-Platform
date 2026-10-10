@@ -1,4 +1,4 @@
-# Payment Growth Analytics Platform
+# Payment & Risk Analytics Platform
 
 A self-service analytics product that helps payment teams **monitor merchant performance, benchmark against peers, diagnose success-rate movements, and surface prioritised growth opportunities** — from a KPI movement to a data-backed explanation and a next step.
 
